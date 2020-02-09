@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<audio autoplay="autoplay" loop="loop"><source src="向全世界宣布我爱你孙子涵-李潇潇.mp3" type="audio/mp3"/></audio>
+<div class="star comet"></div>
+<script  src="js/index.js"></script>
+<div style="text-align:center;margin:30px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">This is the love story of CSC and X10</span><br/><br/>
+			<span class="comments">Every day in the morning</span><br/>
+			<span class="comments">Befor I wake up</span><br/>
+			<span class="comments">My body is missing you </span><br/>
+			<span class="comments">After I wake up</span><br/>
+			<span class="comments">My heart is missing you</span><br/><br/>
+			<span class="comments">You are my sunshine</span><br/>
+			<span class="comments">So,if you appeared earlier than the sun</span><br/>
+			<span class="comments">I can see the sunshine earlier</span><br/>
+			<span class="comments">If you stay with me all night</span><br/>
+			<span class="comments">There is no darkness in my world</span><br/><br/>
+			<span class="comments">I love your wet hair</span><br/>
+			<span class="comments">I love your watery eyes</span><br/>
+			<span class="comments">I love your juicy lips</span><br/>
+			<span class="comments">I love all your juicy places</span><br/>
+			<span class="comments">Especially the wetland where that gave birth to life</span><br/>
+			<span class="comments">I love you forever.</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					琳, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love you forever and ever.<br/>
+					<div class="signature">- CSC</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		Copyright © 2020 <a href="http://cuiqingcai.com">CSC.com</a> 2020-2100
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	together.setFullYear(2020,1,5);
+	together.setHours(22);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
